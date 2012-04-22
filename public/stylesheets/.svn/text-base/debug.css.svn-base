@@ -1,0 +1,74 @@
+/* | DEBUG ELEMENTS
+   +------------------------------------------- */
+table.debug {
+  background: #eee;
+  border: solid 1px #666;
+  border-right: solid 2px #666;
+}
+
+table.debug#arrayDebug {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 450px;
+}
+
+table.debug#stringDebug {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 450px;
+}
+
+table.debug caption {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+  padding: 2px 5px;
+  text-align: right;
+}
+
+table.debug caption span {
+  float: left;
+}
+
+table.debug td.status,
+table.debug td.label  {
+  border-bottom: solid 1px #666;
+}
+
+table.debug td.label {
+  background: #999;
+  font-weight: bold;
+  line-height: 11px;
+  margin: 0px;
+  padding: 4px 5px;
+  text-align: right;
+  width: 75px;
+}
+
+table.debug td.label span {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+}
+
+table.debug td.status table.variable td {
+  line-height: 100%;
+  text-align: left;
+}
+
+table.debug td.status table.variable thead td {
+  font-weight: bold;
+}
+
+table.debug td.status table.variable td.variable {
+  vertical-align: top;
+  width: 100px;
+}
+
+table.debug td.status table.variable td.value span.indent {
+  display: block;
+  padding-left: 10px;
+}

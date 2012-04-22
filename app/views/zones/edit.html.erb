@@ -1,0 +1,8 @@
+<h2><%= @zone.origin %> :: Edit Zone</h2>
+
+<% form_for(:zone, :url => zone_path, :html => { :method => :put }) do |f| %>
+<fieldset>
+<%= render :partial => 'form', :object => f, :locals => {:resources => true} %>
+<div id="submit"><%= submit_tag "Update Zone" %></div>
+</fieldset>
+<% end %>

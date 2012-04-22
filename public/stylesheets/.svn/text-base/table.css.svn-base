@@ -1,0 +1,86 @@
+/* | TABLE ELEMENTS 
+   +------------------------------------------- */
+
+table {
+  clear: both;
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  width: 100%;
+}
+
+table caption {
+  background: #777 url("/img/interface/bg-corner.png") top left no-repeat;
+  margin-top: 1.5em;
+  text-align: left;
+}
+
+caption h4 {
+  background: transparent url("/img/interface/bg-corner.png") top right no-repeat;
+  font-size: 1em;
+  padding: .25em .5em;
+  color: #fff;
+}
+
+thead tr {
+  padding: .5em;
+}
+
+thead td {
+  border-top: solid 1px #BD4623;
+  border-bottom: solid 5px #777;
+  background-color: #DA5E38;
+  color: #333;
+  font-weight: bold;
+  padding: 0 .5em;
+}
+
+tbody tr.even td {
+  border-top: solid 1px #cecece;
+  border-bottom: solid 1px #cecece;
+  background-color: #efefef;
+}
+
+tbody td {
+  border-left: solid 1px #efefef;
+  padding: .15em .5em;
+}
+
+tfoot td {
+  border-top: solid 1px #efefef;
+  font-weight: bold;
+  margin: .25em 0 0 0;
+  padding: .15em .5em;
+}
+
+td.action {
+  text-align: center;
+  width: 45px;
+}
+
+tbody td.action,
+tbody td.aDelete {
+  border-right: solid 1px #efefef;
+}
+
+td.aDelete {
+  text-align: center;
+  width: 60px;
+}
+
+td.action a {
+  background-image: url("/img/interface/icons/edit.png");
+}
+
+td.aDelete a {
+  background-image: url("/img/interface/icons/delete.png");
+}
+
+table#form-rr thead td {
+  text-align: center;
+}
+
+table#form-rr thead td#rr-name,
+table#form-rr thead td#rr-data {
+  padding-left: 10px;
+  text-align: left;
+}

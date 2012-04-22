@@ -1,0 +1,206 @@
+CREATE TABLE dns_zones (
+  id                 SERIAL8 PRIMARY KEY,
+  origin             VARCHAR(255) UNIQUE NOT NULL,
+  ns                 VARCHAR(255) NOT NULL,
+  mbox               VARCHAR(255) NOT NULL,
+  serial             INT8 NOT NULL DEFAULT '1',
+  refresh            INT4 NOT NULL DEFAULT '10800',  -- 3 hours
+  retry              INT4 NOT NULL DEFAULT '3600',   -- 1 hour
+  expire             INT4 NOT NULL DEFAULT '604800', -- 1 week
+  ttl                INT4 NOT NULL DEFAULT '3600');  -- 1 hour
+
+CREATE TABLE dns_resource_types (
+  id                 SERIAL8 PRIMARY KEY,
+  name               VARCHAR(255) NOT NULL,
+  description        TEXT
+);
+INSERT INTO dns_resource_types (name, description) VALUES    ('A', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('AAAA', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('CNAME', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('HINFO', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('MX', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('NS', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('PTR', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('SRV', '');
+INSERT INTO dns_resource_types (name, description) VALUES    ('TXT', '');
+
+CREATE TABLE dns_resources (
+  id                 SERIAL8 PRIMARY KEY,
+  dns_zone_id        INT8 NOT NULL REFERENCES dns_zones ON DELETE CASCADE ON UPDATE CASCADE,
+  dns_resource_type_id INT8 NOT NULL REFERENCES dns_resource_types,
+  name               VARCHAR(64) NOT NULL,
+  data               VARCHAR(255) NOT NULL,
+  aux                INT4 NULL DEFAULT NULL,
+  ttl                INT4 NULL DEFAULT NULL);
+  
+COPY dns_zones (id, origin, ns, mbox, serial, refresh, retry, expire, ttl) FROM stdin;
+2	thesjg.com	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+3	thesjg.net	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+4	thesjg.org	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+12	ftmeaderemount.com	ns.evilcode.net	dns.evilcode.net	7	10800	3600	604800	3600
+5	mindlessracing.com	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+6	mindlessracing.net	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+7	mindlessracing.org	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+8	bitbum.com	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+9	bitbum.net	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+10	bitbum.org	ns.evilcode.net	dns.evilcode.net	6	10800	3600	604800	3600
+1	evilcode.net	ns.evilcode.net	dns.evilcode.net	23	10800	3600	604800	3600
+13	evilprojects.net	ns.evilcode.net	dns.evilcode.net	13	300	300	1200	300
+11	flixn.com	ns.evilcode.net	dns.evilcode.net	39	300	300	1200	300
+30	randallcreasey.com	ns1.infernalhosting.net	dns.infernalhosting.net	21	10800	3600	604800	3600
+29	randallbattlesdirk.com	ns1.infernalhosting.net	dns.infernalhosting.net	7	10800	3600	604800	3600
+28	k-osh.com	ns1.infernalhosting.net	dns.infernalhosting.net	8	10800	3600	604800	3600
+25	infernalhosting.net	ns1.infernalhosting.net	dns.infernalhosting.net	78	10800	3600	604800	3600
+27	durandall.org	ns1.infernalhosting.net	dns.infernalhosting.net	11	10800	3600	604800	3600
+26	developink.com	ns1.infernalhosting.net	dns.infernalhosting.net	13	10800	3600	604800	3600
+14	kaneda.net	ns1.infernalhosting.net	dns.infernalhosting.net	11	10800	3600	604800	3600
+\.
+
+COPY dns_resources (id, dns_zone_id, dns_resource_type_id, name, data, aux, ttl) FROM stdin;
+3	1	1	ns0	72.232.239.131	\N	\N
+4	1	1	ns1	72.232.228.26	\N	\N
+6	1	5		mail.evilcode.net	1	\N
+7	1	6		ns0.evilcode.net	\N	\N
+8	1	6		ns1.evilcode.net	\N	\N
+10	2	1		72.232.239.133	\N	\N
+11	2	1	*	72.232.239.133	\N	\N
+12	2	6		ns0.evilcode.net	\N	\N
+13	2	6		ns1.evilcode.net	\N	\N
+14	3	1		72.232.239.133	\N	\N
+15	3	1	*	72.232.239.133	\N	\N
+16	3	6		ns0.evilcode.net	\N	\N
+17	3	6		ns1.evilcode.net	\N	\N
+18	4	1		72.232.239.133	\N	\N
+19	4	1	*	72.232.239.133	\N	\N
+20	4	6		ns0.evilcode.net	\N	\N
+21	4	6		ns1.evilcode.net	\N	\N
+22	5	1		72.232.239.133	\N	\N
+23	5	1	*	72.232.239.133	\N	\N
+24	5	6		ns0.evilcode.net	\N	\N
+25	5	6		ns1.evilcode.net	\N	\N
+26	6	1		72.232.239.133	\N	\N
+27	6	1	*	72.232.239.133	\N	\N
+28	6	6		ns0.evilcode.net	\N	\N
+29	6	6		ns1.evilcode.net	\N	\N
+30	7	1		72.232.239.133	\N	\N
+31	7	1	*	72.232.239.133	\N	\N
+32	7	6		ns0.evilcode.net	\N	\N
+33	7	6		ns1.evilcode.net	\N	\N
+34	8	1		72.232.239.133	\N	\N
+35	8	1	*	72.232.239.133	\N	\N
+36	8	6		ns0.evilcode.net	\N	\N
+37	8	6		ns1.evilcode.net	\N	\N
+38	9	1		72.232.239.133	\N	\N
+39	9	1	*	72.232.239.133	\N	\N
+40	9	6		ns0.evilcode.net	\N	\N
+41	9	6		ns1.evilcode.net	\N	\N
+42	10	1		72.232.239.133	\N	\N
+43	10	1	*	72.232.239.133	\N	\N
+44	10	6		ns0.evilcode.net	\N	\N
+45	10	6		ns1.evilcode.net	\N	\N
+48	11	1	fms01	72.232.239.130	\N	\N
+49	11	1	fms02	72.232.228.26	\N	\N
+50	11	1	media	72.232.228.26	\N	\N
+51	11	6		ns0.evilcode.net	\N	\N
+52	11	6		ns1.evilcode.net	\N	\N
+53	11	5		smtp15.msoutlookonline.net	1	\N
+54	12	1		72.232.239.133	\N	\N
+55	12	1	*	72.232.239.133	\N	\N
+58	11	1	mint	72.232.239.133	\N	\N
+1	1	1		72.232.239.133	\N	\N
+2	1	1	*	72.232.239.133	\N	\N
+56	12	6		ns0.evilcode.net	\N	\N
+57	12	6		ns1.evilcode.net	\N	\N
+76	30	1		72.232.239.133	0	300
+82	29	1		72.232.239.133	0	300
+59	1	1	aurora	67.15.197.7	\N	\N
+60	1	1	hawthorne	72.232.228.26	\N	\N
+61	1	1	brio	209.40.201.62	\N	\N
+62	1	1	catalyst	72.232.239.130	\N	\N
+63	13	1		72.232.239.132	0	300
+64	13	1	*	72.232.239.132	0	300
+65	13	6		ns0.evilcode.net	0	300
+66	13	6		ns1.evilcode.net	0	300
+67	13	3	mail	mail.evilcode.net	0	300
+68	13	5		mail.evilcode.net	0	300
+69	1	1	svn	72.232.239.130	\N	\N
+70	13	1	www	72.232.239.133	0	300
+74	11	1	ecard	72.232.239.133	\N	300
+75	11	1	ecards	72.232.239.133	\N	300
+77	30	6		ns0.evilcode.net.	0	300
+78	30	6		ns1.evilcode.net.	0	300
+79	30	5		mail.infernalhosting.net.	0	300
+80	30	3	mail	mail.infernalhosting.net.	0	300
+81	30	3	www	randallcreasey.com.	0	300
+83	29	5		mail.randallbattlesdirk.com.	0	300
+46	11	1		72.232.239.133	\N	300
+47	11	1	*	72.232.239.133	\N	300
+84	29	3	www	randallbattlesdirk.com.	0	300
+85	29	1	db	67.15.197.7	0	300
+71	11	1	admin	72.232.239.133	\N	300
+72	11	1	widgets	72.232.239.133	\N	300
+73	13	1	flixn	72.232.239.133	\N	300
+5	1	1	mail	72.232.239.131	\N	\N
+86	29	3	mail	mail.infernalhosting.net.	0	300
+87	28	6		ns0.evilcode.net.	0	300
+88	28	6		ns1.evilcode.net.	0	300
+89	28	5		mail.infernalhosting.net.	0	300
+90	28	3	mail	mail.infernalhosting.net.	0	300
+92	28	3	www	k-osh.com.	0	300
+93	27	5		mail.infernalhosting.net.	0	300
+94	27	3	mail	mail.infernalhosting.net.	0	300
+95	27	3	www	durandall.org.	0	300
+96	27	3	dev	durandall.org.	0	300
+99	27	6		ns1.evilcode.net.	0	300
+100	27	6		ns0.evilcode.net.	0	300
+101	26	3	www	developink.myshopify.com.	0	300
+91	28	1		72.232.239.133	0	300
+97	27	1		72.232.239.133	0	300
+98	27	1	mysql	72.232.239.133	0	300
+102	26	5		mail.infernalhosting.net.	0	300
+103	26	3	mail	mail.infernalhosting.net.	0	300
+105	26	6		ns1.evilcode.net.	0	300
+107	26	6		ns0.evilcode.net.	0	300
+108	26	3	shop	developink.myshopify.com.	0	300
+109	26	3	dev	developink.com.	0	300
+110	26	1	sql	67.15.197.7	0	300
+111	14	5		mail.kaneda.net.	0	300
+112	14	3	stats	web01.infernalhosting.net.	0	300
+113	14	3	mail	mail.infernalhosting.net.	0	300
+114	14	3	ns	ns1.infernalhosting.net.	0	300
+115	14	1		72.232.239.132	0	300
+116	14	6		ns0.evilcode.net.	0	300
+117	14	3	www	kaneda.net.	0	300
+118	14	3	db	db01.infernalhosting.net.	0	300
+119	14	3	xml	kaneda.net.	0	300
+120	14	3	feed	kaneda.net.	0	300
+121	25	5		mail.infernalhosting.net.	0	300
+122	25	3	media	infernalhosting.net.	0	300
+123	25	1	rails01	72.232.239.132	0	300
+124	25	1	web01	72.232.239.133	0	300
+125	25	1	db01	10.0.3.1	0	300
+126	25	1	mdb01	10.0.0.2	0	300
+127	25	1		72.232.239.132	0	300
+131	25	3	irc	irc.evilcode.net.	0	300
+134	25	3	ns	ns1.infernalhosting.net.	0	300
+137	25	3	old	infernalhosting.net.	0	300
+138	25	1	services.irc	70.168.96.168	0	300
+139	25	1	sql	67.15.197.7	0	300
+140	25	3	www	infernalhosting.net.	0	300
+141	25	3	dev.admin	infernalhosting.net.	0	300
+142	25	3	dev	rails01.infernalhosting.net.	0	300
+143	25	3	cacti	web01.infernalhosting.net.	0	300
+104	26	1	mysql	72.232.239.133	0	300
+106	26	1		72.232.239.133	0	300
+130	25	1	webmail	72.232.239.133	0	300
+133	25	1	mysql	72.232.239.133	0	300
+132	25	1	mail	72.232.239.131	0	300
+144	25	5		mail.infernalhosting.net.	0	300
+150	25	1		72.232.239.132	0	300
+173	13	1	flixnsvn	72.232.239.132	\N	300
+174	13	1	hacks	72.232.239.132	\N	300
+175	25	1	ns0	72.232.239.131	0	300
+135	25	1	ns1	72.232.228.26	0	300
+128	25	6		ns0.infernalhosting.net	0	300
+129	25	6		ns1.infernalhosting.net	0	300
+\.

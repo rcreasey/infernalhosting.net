@@ -1,0 +1,64 @@
+/* | BASIC XHMTL ELEMENTS 
+   +------------------------------------------- */
+html {
+  color: #000;
+  font-family: tahoma, verdana, geneva, sans-serif;
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+}
+
+body {
+  background: #000;
+  margin: 0;
+}
+
+img { 
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #D34E27;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a83f1f;
+  text-decoration: none;
+}
+
+/* | LAYOUT ELEMENTS 
+   +------------------------------------------- */
+#wrapper {
+  margin: 0;
+  padding: 0;
+
+}
+
+#content {
+  margin-bottom: .10em;
+  min-height: 500px;
+  padding: 2em;
+  text-align: center;
+}
+
+#footer {
+  clear: both;
+  color: #ccc;
+  font-family: "lucida grande", "lucida sans unicode", lucida, verdana, geneva, sans-serif;
+  font-size: .85em;
+  text-align: center;
+}
+
+#footer a {
+  color: #e6937a;
+  font-weight: normal;
+}
+
+#footer a:hover {
+  color: #f2c7ba;
+}
+
+

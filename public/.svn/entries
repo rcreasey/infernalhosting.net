@@ -1,0 +1,37 @@
+8
+
+dir
+988
+svn://svn.evilcode.net/sites/infernalhosting.net/trunk/public
+svn://svn.evilcode.net/sites
+
+
+
+2008-03-12T23:19:06.376507Z
+981
+ryan
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b1206cc1-2106-0410-84da-53eeff8bd16c
+
+javascripts
+dir
+
+img
+dir
+
+stylesheets
+dir
+

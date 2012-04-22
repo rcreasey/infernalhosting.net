@@ -1,0 +1,9 @@
+Hey <%= @account.first_name %>! Guess what?
+
+Our minions have *just* finished your wiring and plugged in the juice; your account is now raring to go!
+
+It looks like your credit card has been accepted and you should be able to start setting up what you want to host.
+
+What are you waiting for?  You should go log in and start taking over the internets!
+
+http://infernalhosting.net/login/

@@ -1,0 +1,72 @@
+/* | LAYOUT ELEMENTS 
+   +------------------------------------------- */
+#wrapper {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 800px;
+}
+
+#header {
+  background: #7B2E16 url("/img/interface/bg-header.png") top left no-repeat;
+  color: #000;
+  height: 105px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#content {
+  background: url("/img/interface/bg-content.png") top left repeat-y;
+  height: 1%;
+  max-width: 800px;
+  min-height: 500px;
+  padding: 1.5em 2em .5em 1.5em;
+  overflow: hidden;
+}
+
+#navigation {
+  line-height: 18px;
+  height: 22px;
+  margin: 0px;
+  padding-left: 1em;
+  text-align: right;
+  text-transform: lowercase;
+}
+
+#navigation li {
+  font-size: .8em;
+  font-weight: normal;
+  display: inline;
+  height: 22px;
+  line-height: 1em;
+  margin-right: 1.5em;
+  padding: 0;
+}
+
+#navigation li a {
+  color: #fff;
+  width: 100px;
+}
+
+#navigation li a:hover {
+  text-decoration: underline;
+}
+
+#footer {
+  background: url("/img/interface/bg-footer.png") bottom left no-repeat;
+  clear: both;
+  color: #ccc;
+  font-family: "lucida grande", "lucida sans unicode", lucida, verdana, geneva, sans-serif;
+  font-size: .85em;
+  text-align: center;
+  margin-top: -1px;
+  padding: 1em;
+}
+
+#footer a {
+  color: #f2c7ba;
+  font-weight: normal;
+}
+
+#footer a:hover {
+  color: #e6937a;
+}

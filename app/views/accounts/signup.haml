@@ -1,0 +1,49 @@
+%h2 Signup For Services
+%p Tired of all the other crappy hosting companies and ready to signup with us?  Just fill out this form to get the process started.  Once it's complete, we'll send you an email telling you what to do next.
+
+= error_messages_for :account
+
+- form_for :account, :url => accounts_path do |account|
+  %fieldset#signup
+    %h3 Contact Information
+
+    %div
+      %label{:for => 'account_first_name'} First Name
+      = account.text_field :first_name
+      %p.caption What is your first name?
+
+    %div
+      %label{:for => 'account_last_name'} Last Name
+      = account.text_field :last_name
+      %p.caption What is your last name?
+
+    %div
+      %label{:for => 'account_email_address'} Email Address
+      = account.text_field :email_address
+      %p.caption What is your email address? (not on a domain you plan on hosting with us)
+
+    %div
+      %label{:for => 'account_phone_number'} Phone Number
+      = account.text_field :phone_number
+      %p.caption What is a good phone number we can reach you at?
+
+    %h3 Login Information
+    
+    %div
+      %label{:for => 'account_login'} Login
+      = account.text_field :login
+      %p.caption What login do you want to use for your account?
+
+    %div
+      %label{:for => 'account_password'} Password
+      = account.password_field :password
+      %p.caption What password do you want to use? (It needs to be 4-40 letters or numbers)
+      
+    %div
+      %label{:for => 'account_password_confirmation'} Password Again
+      = account.password_field :password_confirmation
+      %p.caption Can you confirm that password you just typed once more?
+    
+    #submit= submit_tag "Continue"
+
+

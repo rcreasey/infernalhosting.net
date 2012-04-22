@@ -1,0 +1,8 @@
+<h2>Zones</h2>
+<p>Here are the domains that you currently have hosted with us.  From here, you're able to add or delete domains as well as manipulate the DNS records for existing zones.</p>
+
+<%= domain_list %>
+
+<div class="grid-item">
+<h4><%= link_to "Add a domain", new_zone_path %><span class="subtitle">Host another domain with us!</span></h4>
+</div>

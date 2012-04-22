@@ -1,0 +1,79 @@
+9
+
+dir
+66
+http://elitists.textdriven.com/svn/plugins/acts_as_state_machine/trunk/test
+http://elitists.textdriven.com/svn/plugins
+
+
+
+2006-07-23T19:41:31.448692Z
+65
+sbarron
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a9f67fa3-8408-0410-ad84-b6cefbfd10ac
+
+test_helper.rb
+file
+
+
+
+
+2008-03-12T23:25:09.000000Z
+301c853c8eda52dd1ec6619cfbf91be0
+2006-01-15T17:08:57.735065Z
+32
+sbarron
+
+acts_as_state_machine_test.rb
+file
+
+
+
+
+2008-03-12T23:25:10.000000Z
+663f06569208f92084d0bcbadddc0319
+2006-07-14T14:50:17.748840Z
+61
+sbarron
+
+schema.rb
+file
+
+
+
+
+2008-03-12T23:25:10.000000Z
+d9765963286b92c8c480a4a2ec0a1468
+2006-07-23T19:41:31.448692Z
+65
+sbarron
+
+database.yml
+file
+
+
+
+
+2008-03-12T23:25:10.000000Z
+cee681e7379cf5e6855b1b236dd90fd7
+2006-01-15T17:08:57.735065Z
+32
+sbarron
+
+fixtures
+dir
+

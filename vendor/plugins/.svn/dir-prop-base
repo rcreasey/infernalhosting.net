@@ -1,0 +1,8 @@
+K 13
+svn:externals
+V 274
+restful_authentication        http://svn.techno-weenie.net/projects/plugins/restful_authentication
+acts_as_state_machine	      http://elitists.textdriven.com/svn/plugins/acts_as_state_machine/trunk
+haml                          http://svn.hamptoncatlin.com/haml/tags/stable
+
+END

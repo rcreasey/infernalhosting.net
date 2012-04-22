@@ -1,0 +1,7 @@
+%h2 Account Dashboard
+%p
+  Hi,
+  = current_account.first_name
+  !  Welcome to your <strong class="orange">infernal</strong>hosting dashboard.  From here, you can completely manage all aspects of your account.  To get started, select a section of your account to manage:
+  
+= dashboard_menu  

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/plugins/!svn/ver/61/acts_as_state_machine/trunk/test/fixtures
+END
+person.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/plugins/!svn/ver/32/acts_as_state_machine/trunk/test/fixtures/person.rb
+END
+conversation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/plugins/!svn/ver/61/acts_as_state_machine/trunk/test/fixtures/conversation.rb
+END
+conversations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/plugins/!svn/ver/32/acts_as_state_machine/trunk/test/fixtures/conversations.yml
+END

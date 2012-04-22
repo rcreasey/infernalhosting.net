@@ -1,0 +1,4 @@
+<h2><%= @zone.origin %></h2>
+
+<%= content_tag(:p, link_to('Edit Zone', edit_zone_path(@zone))) %>
+<%= content_tag(:p, link_to('Delete Zone', zone_path(@zone), :method => 'delete', :confirm => 'Are you sure?')) %>

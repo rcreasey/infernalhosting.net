@@ -1,0 +1,9 @@
+%h2 Account Activation Complete
+
+%p Alright!  You've done it.  You're now ready to begin configuring your services and taking over the internets!
+
+%p
+  %strong.gray
+    Start by 
+    = link_to "Logging in", login_url
+    !

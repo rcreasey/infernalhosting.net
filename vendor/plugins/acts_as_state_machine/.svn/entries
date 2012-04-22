@@ -1,0 +1,106 @@
+9
+
+dir
+66
+http://elitists.textdriven.com/svn/plugins/acts_as_state_machine/trunk
+http://elitists.textdriven.com/svn/plugins
+
+
+
+2006-11-13T13:47:36.018687Z
+66
+sbarron
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a9f67fa3-8408-0410-ad84-b6cefbfd10ac
+
+test
+dir
+
+Rakefile
+file
+
+
+
+
+2008-03-12T23:25:17.000000Z
+bf4114a3b02bfd02cfb35103841a1744
+2006-01-15T17:29:13.530352Z
+36
+sbarron
+
+TODO
+file
+
+
+
+
+2008-03-12T23:25:17.000000Z
+c7cdaf69a6ca8d84735e94c04d3e9b00
+2006-01-20T20:25:05.043152Z
+45
+sbarron
+
+init.rb
+file
+
+
+
+
+2008-03-12T23:25:17.000000Z
+331a772e6bc93e8bcc0b9121c864b7ae
+2006-07-14T14:50:09.395505Z
+60
+sbarron
+
+lib
+dir
+
+CHANGELOG
+file
+
+
+
+
+2008-03-12T23:25:18.000000Z
+6724b4ffea59678592fbc77bc283f30d
+2006-11-13T13:47:36.018687Z
+66
+sbarron
+
+MIT-LICENSE
+file
+
+
+
+
+2008-03-12T23:25:18.000000Z
+918aa567713910d9ca412696e9c3a12e
+2006-01-15T17:08:57.735065Z
+32
+sbarron
+
+README
+file
+
+
+
+
+2008-03-12T23:25:18.000000Z
+396c3550ac041e62a283247d43a06087
+2006-01-21T00:34:14.035256Z
+47
+sbarron
+

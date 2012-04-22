@@ -1,0 +1,101 @@
+<%= all_error_messages_for :zone %>
+
+<h4><%= hider_toggle('SOA Information', 'soa_information') %></h4>
+<div id="soa_information" class="hider">
+<div id="origin">
+<label for="origin">Origin</label>
+<%= form.text_field :origin, :disabled => params[:action] =~ /new|create/ ? false : true %>
+<p class="caption">This is the name of the zone.  You can't change this.</p>
+</div>
+
+<div id="nameserver">
+<label for="nameserver">Nameserver</label>
+<%= form.text_field :ns %>
+<p class="caption">The name of the nameserver that is the primary source of data for this zone.</p>
+</div>
+
+<div id="mbox">
+<label for="mbox">Admin Email</label>
+<%= form.text_field :mbox %>
+<p class="caption">A name which specifies the mailbox of the person responsible for this zone.  The should be specified in the mailbox-at-domain-name format where the '@' character is replaced with a '.'</p>
+</div>
+
+<div id="refresh">
+<label for="refresh">Refresh</label>
+<%= form.text_field :refresh %>
+<p class="caption">This specifies the number of seconds after slave nameservers should check to see if this zone has been changed.</p>
+</div>
+
+<div id="retry">
+<label for="retry">Retry</label>
+<%= form.text_field :retry %>
+<p class="caption">This specifies the number of seconds a slave nameserver should wait before retrying if it attempts to transfer this zone but fails.</p>
+</div>
+
+<div id="expire">
+<label for="expire">Expire</label>
+<%= form.text_field :expire %>
+<p class="caption">The number of seconds the primary nameserver expires its authority over the zone.</p>
+</div>
+
+<div id="ttl">
+<label for="ttl">TTL</label>
+<%= form.text_field :ttl %>
+<p class="caption">The number of seconds that this zone may be cached before the source of the information should again be consulted.  Zero values are interpreted to mean that the zone should not be cached.</p>
+</div>
+</div>
+
+<h4><%= hider_toggle('Resource Records', 'resource_records') %></h4>
+<div id="resource_records" class="hider">
+<% if resources %>
+<table cellspacing="0" id="form-rr" class="form-rr-table">
+<thead>
+  <tr>
+    <td id="rr-name">Name</td>
+    <td id="rr-ttl">TTL</td>
+    <td id="rr-type">Type</td>
+    <td id="rr-aux">AUX</td>
+    <td id="rr-data">Data</td>
+    <td class="action" colspan="1">Delete</td>
+  </tr>
+</tdead>
+
+<tbody>
+<% counter = 1 %>
+<% @zone.resources.each do |record| %>
+  <tr class="<%= (counter%2 == 1) ? "odd" : "even" %>">
+    <%= hidden_field_tag "dns_resources[#{record.id}][id]", record.id %>
+    <td><%= text_field_tag "dns_resources[#{record.id}][name]", record.name, :class => 'rr-name' %></td>
+    <td><%= text_field_tag "dns_resources[#{record.id}][ttl]", record.ttl, :size => 5, :class => 'rr-ttl' %></td>
+    <td><%= select_tag "dns_resources[#{record.id}][dns_resource_type_id]", collect_dns_resource_types( record.dns_resource_type ) %></td>
+    <td><%= text_field_tag "dns_resources[#{record.id}][aux]", record.aux, :size => 2 , :class => 'rr-aux' %></td>
+    <td><%= text_field_tag "dns_resources[#{record.id}][data]", record.data, :class => 'rr-data' %></td>
+    <td><%= check_box_tag "dns_resources[#{record.id}][delete]" %></td>
+  </tr>
+<% counter += 1 %>
+<% end %>
+</tbody>
+
+<tfoot>
+  <tr>
+  <td colspan="6" class="right"><%= @zone.resources.length %> Records Found<br /><span style="float: left">Create New Record:</span></td>
+  </tr>
+  <tr>
+    <td><%= text_field_tag "dns_resources[new][name]", nil, :class => 'rr-name' %></td>
+    <td><%= text_field_tag "dns_resources[new][ttl]", nil, :size => 5, :class => 'rr-ttl' %></td>
+    <td><%= select_tag "dns_resources[new][dns_resource_type_id]", collect_dns_resource_types %></td>
+    <td><%= text_field_tag "dns_resources[new][aux]", nil, :size => 2 , :class => 'rr-aux' %></td>
+    <td><%= text_field_tag "dns_resources[new][data]", nil, :class => 'rr-data' %></td>
+    <td>&nbsp;</td>
+  </tr>
+</tfoot>
+</table>
+<% else %>
+<div id="default_resources">
+<label for="zone_resources_default">Default Records</label>
+<%= check_box_tag "dns_resources[default]", true, true %>
+<p class="caption">When creating this new zone, also populate it with default values to get things started (you can edit these later).</p>
+</div>
+<% end %>
+</div>
+

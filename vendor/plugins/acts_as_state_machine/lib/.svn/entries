@@ -1,0 +1,40 @@
+9
+
+dir
+66
+http://elitists.textdriven.com/svn/plugins/acts_as_state_machine/trunk/lib
+http://elitists.textdriven.com/svn/plugins
+
+
+
+2006-11-13T13:47:36.018687Z
+66
+sbarron
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a9f67fa3-8408-0410-ad84-b6cefbfd10ac
+
+acts_as_state_machine.rb
+file
+
+
+
+
+2008-03-12T23:25:14.000000Z
+9cec161065440f74ddf6d785c70db02a
+2006-11-13T13:47:36.018687Z
+66
+sbarron
+

@@ -1,0 +1,8 @@
+<h2>Create Zone</h2>
+
+<% form_for(:zone, :url => zones_path, :html => { :method => :post }) do |f| %>
+<fieldset>
+<%= render :partial => 'form', :object => f, :locals => {:resources => false} %>
+<div id="submit"><%= submit_tag "Create Zone" %></div>
+</fieldset>
+<% end %>

@@ -1,0 +1,12 @@
+$TTL <%= @zone.ttl %>
+@             IN      SOA   <%= @zone.formatted_ns %> <%= @zone.formatted_mbox %> (
+                        <%= @zone.serial %>
+                        <%= @zone.refresh %>
+                        <%= @zone.retry %>
+                        <%= @zone.expire %>
+                        300
+                        )
+
+$ORIGIN <%= @zone.formatted_origin %>
+<% @zone.resources.each do |record| %>
+<%= record.to_txt %><% end %>

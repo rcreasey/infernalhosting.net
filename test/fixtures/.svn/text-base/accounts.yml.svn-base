@@ -1,0 +1,25 @@
+quentin:
+  id: 1
+  first_name: Quentin
+  last_name: Jones
+  login: quentin
+  phone_number: (555) 555-5555
+  email_address: quentin@example.com
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
+  created_at: <%= 5.days.ago.to_s :db %>
+  activation_code: 8f24789ae988411ccf33ab0c30fe9106fab32e9b 
+  activated_at: <%= 5.days.ago.to_s :db %> 
+  state: active
+aaron:
+  id: 2
+  first_name: Aaron
+  last_name: Firth
+  login: aaron
+  phone_number: (555) 555-7777
+  email_address: aaron@example.com
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
+  created_at: <%= 1.days.ago.to_s :db %>
+  activation_code: 8f24789ae988411ccf33ab0c30fe9106fab32e9a 
+  state: pending
