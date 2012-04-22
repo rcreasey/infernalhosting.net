@@ -1,0 +1,44 @@
+<%= error_messages_for 'domain' %>
+
+<table cellspacing="0" id="form-rr" class="form-rr-table">
+<thead>
+  <tr>
+    <td id="rr-name">Name</td>
+    <td id="rr-type">Type</td>
+    <td id="rr-data">Data</td>
+    <td id="rr-ttl">TTL</td>
+    <td id="rr-aux">AUX</td>
+    <td class="action" colspan="1">Delete</td>
+  </tr>
+</tdead>
+
+<tbody>
+<% counter = 1 %>
+<% for record in @domain.records %>
+  <tr class="<%= (counter%2 == 1) ? "odd" : "even" %>">
+    <%= hidden_field_tag "updates[#{record.id}][id]", record.id %>
+    <td><%= text_field_tag "updates[#{record.id}][name]", record.name, {:id => nil, :class => 'rr-name'} %></td>
+    <td><%= select_tag "updates[#{record.id}][type]", ["A", "AAAA", "CNAME", "HINFO", "MX", "NS", "PTR", "SRV", "TXT"].collect {|o| o == record.type ? "<option selected>#{o}</option>" : "<option>#{o}</option>"} %></td>
+    <td><%= text_field_tag "updates[#{record.id}][data]", record.data, {:id => nil, :class => 'rr-data'} %></td>
+    <td><%= text_field_tag "updates[#{record.id}][ttl]", record.ttl, {:id => nil, :size => 5, :class => 'rr-ttl'} %></td>
+    <td><%= text_field_tag "updates[#{record.id}][aux]", record.aux, {:id => nil, :size => 2 , :class => 'rr-aux'} %></td>
+    <td><%= check_box_tag "updates[#{record.id}][delete]" %></td>
+  </tr>
+<% counter += 1 %>
+<% end %>
+</tbody>
+
+<tfoot>
+  <tr>
+  <td colspan="6" class="right"><%= @domain.records.length %> Records Found<br /><span style="float: left">Create New Record:</span></td>
+  </tr>
+  <tr>
+    <td><%= text_field_tag "new[name]", nil, {:id => nil, :class => 'rr-name'} %></td>
+    <td><%= select_tag "new[type]", ["A", "AAAA", "CNAME", "HINFO", "MX", "NS", "PTR", "SRV", "TXT"].collect {|o| "<option>#{o}</option>"} %></td>
+    <td><%= text_field_tag "new[data]", nil, {:id => nil, :class => 'rr-data'} %></td>
+    <td><%= text_field_tag "new[ttl]", nil, {:id => nil, :size => 5, :class => 'rr-ttl'} %></td>
+    <td><%= text_field_tag "new[aux]", nil, {:id => nil, :size => 2 , :class => 'rr-aux'} %></td>
+    <td>&nbsp;</td>
+  </tr>
+</tfoot>
+</table>

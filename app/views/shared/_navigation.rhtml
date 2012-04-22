@@ -1,0 +1,15 @@
+<ul id="navigation">
+<% if logged_in? %>
+  <li><%= link_to "Overview", :controller => 'panel' %></li>
+  <li><%= link_to "Account", :controller => 'account' %></li>
+  <li><%= link_to "Domains", :controller => 'domain' %></li>
+  <li><%= link_to "Support", :controller => 'support' %></li>
+  <li><%= link_to "Logout", :controller => '/logout' %></li>
+<% else %>
+  <li><%= link_to "Services", :controller => 'services' %></li>
+  <li><%= link_to "About", :controller => 'about' %></li>
+  <li><%= link_to "Support", :controller => 'support' %></li>
+  <li><%= link_to "Contact", :controller => 'contact' %></li>
+  <li><%= link_to "Login", :controller => 'login' %></li>
+<% end %>
+</ul>

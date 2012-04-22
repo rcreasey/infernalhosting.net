@@ -1,0 +1,18 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<h3>Alias Accounts</h3>
+
+<div id="alias-container">
+<ul id="alias-list">
+  <li><%= link_to_remote "Add Alias", :url=>{ :controller => "/panel/#{@domain.name}/mail", :action=>"new_alias"}, :update=>"alias-detail" %></li>
+<% for mailalias in @domain.mailaliases %>
+  <li><%= link_to_remote mailalias.address, :url=>{ :controller => "/panel/#{@domain.name}/mail", :action=>"edit_alias", :id=> mailalias.id}, :update=>"alias-detail" %></li>
+<% end %>
+</ul>
+
+<div id="alias-detail">
+<%= render :partial => 'alias_detail' %>
+</div>
+</div>

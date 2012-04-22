@@ -1,0 +1,17 @@
+login: &login
+  adapter: postgresql
+  username: evilserve
+  password: Iitwitm.338
+  host: mdb01.infernalhosting.net
+
+development:
+  database: evilserve
+  <<: *login
+
+test:
+  database: evilserve_test
+  <<: *login
+
+production:
+  database: evilserve
+  <<: *login

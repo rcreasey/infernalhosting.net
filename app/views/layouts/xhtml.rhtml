@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <head>
+    <title>infernalhosting.net<%= " :: " + @title.downcase if @title %></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Evilcode"/>
+    <%= stylesheet_link_tag "base", "layout", "classes", "header", "form", "table", "tabs" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body>
+    <%= render :partial => "shared/loader" %>
+    <div id="wrapper">
+    <div id="header">
+      <h1>infernalhosting</h1>
+      <%= render :partial => "shared/navigation" %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <%= render :partial => "shared/footer" %>
+    </div>
+  </body>
+</html>

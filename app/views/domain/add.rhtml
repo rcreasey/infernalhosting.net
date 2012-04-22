@@ -1,0 +1,18 @@
+<h2>Add A Domain</h2>
+<p>Before you can begin enabling hosting services, you must first add a domain to our servers.</p>
+<p>Currently we only offer hosting for already registered domain names, so you must have access to your domain's registrar to complete the hosting process.</p>
+
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= start_form_tag :action => 'create' %>
+<fieldset>
+<legend>Add Domain</legend>
+  <%= render :partial => 'form' %>
+<div id="form_submit">
+  <%= submit_tag 'Add Domain' %>
+</div>
+</fieldset>
+<%= end_form_tag %>
+

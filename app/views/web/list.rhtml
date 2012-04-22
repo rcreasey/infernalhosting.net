@@ -1,0 +1,10 @@
+<h2>Manage Sites :: <%= @domain.name %></h2>
+<div id="fancymenu">
+<ul>
+  <li><%= link_to "Manage Domain", :controller => "/panel/#{@domain.name}" %></li>
+</ul>
+
+</div>
+<p>For the sites attached to your domain, there are many different configuration options.  To review the settings of a particular site, use the list and form below.</p>
+
+<div id="sites-overview"><%= render :partial => 'list_sites' %></div>

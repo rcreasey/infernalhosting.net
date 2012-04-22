@@ -1,0 +1,52 @@
+<%= error_messages_for 'domain' %>
+
+<!--[form:person]-->
+<div id="origin">
+<label for="origin">Origin</label>
+<%= text_field :domain, :origin, :disabled => true %>
+<p class="form_caption">This is the name of the zone.  You can't change this.</p>
+</div>
+
+<div id="nameserver">
+<label for="nameserver">Nameserver</label>
+<%= text_field :domain, :ns %>
+<p class="form_caption">The name of the nameserver that is the primary source of data for this zone.</p>
+</div>
+
+<div id="mbox">
+<label for="mbox">Admin Email</label>
+<%= text_field :domain, :mbox %>
+<p class="form_caption">A name which specifies the mailbox of the person responsible for this zone.  The should be specified in the mailbox-at-domain-name format where the '@' character is replaced with a '.'</p>
+</div>
+
+<div id="refresh">
+<label for="refresh">Refresh</label>
+<%= text_field :domain, :refresh %>
+<p class="form_caption">This specifies the number of seconds after slave nameservers should check to see if this zone has been changed.</p>
+</div>
+
+<div id="retry">
+<label for="retry">Retry</label>
+<%= text_field :domain, :retry %>
+<p class="form_caption">This specifies the number of seconds a slave nameserver should wait before retrying if it attempts to transfer this zone but fails.</p>
+</div>
+
+<div id="expire">
+<label for="expire">Expire</label>
+<%= text_field :domain, :expire %>
+<p class="form_caption">The number of seconds the primary nameserver expires its authority over the zone.</p>
+</div>
+
+<div id="minimum">
+<label for="minimum">Minimum</label>
+<%= text_field :domain, :minimum %>
+<p class="form_caption">The minimun time to live value in seconds; if a resource record has a lower TTL value, it will default to this value.</p>
+</div>
+
+<div id="ttl">
+<label for="ttl">TTL</label>
+<%= text_field :domain, :ttl %>
+<p class="form_caption">The number of seconds that this zone may be cached before the source of the information should again be consulted.  Zero values are interpreted to mean that the zone should not be cached.</p>
+</div>
+
+<!--[eoform:person]-->

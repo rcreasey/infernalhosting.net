@@ -1,0 +1,20 @@
+<!--[form:web_site]-->
+<div id="name">
+<label for="name">Name</label>
+<%= select :site, :dns_resource_id, @domain.service_records_with_omit(['^www.*']) %>
+<p class="form_caption">Only valid <strong>A</strong> or <strong>CNAME</strong> records may be used to attach a web service.</p>
+</div>
+
+<div id="serveradmin">
+<label for="serveradmin">Admin</label>
+<%= text_field :site, :serveradmin %>
+<p class="form_caption">This is the email of the owner of the site, ie: "webmaster@domain.com".</p>
+</div>
+
+<div id="alias">
+<label for="alias">Create Aliases</label>
+<%= check_box_tag 'aliases', true, true  %>
+<p class="form_caption">Checking this box will automatically create a 'www.' alias for this domain</p>
+</div>
+
+<!--[eoform:web_site]-->

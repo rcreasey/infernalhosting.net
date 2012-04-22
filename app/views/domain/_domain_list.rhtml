@@ -1,0 +1,25 @@
+<h3>Domain Overview<span class="subtitle">These are the domains you currently have hosted with us.  Please select a domain to review the services attached to it.</span></h3>
+<% for domain in @user.domains %>
+<div class="grid-item">
+<h4><%= link_to domain.name, "/panel/#{domain.name}" %></h4>
+
+<% if params[:controller] == 'domain' %>
+<ul class="options">
+  <li><%= link_to 'Manage Domain', "/panel/#{domain.name}", :class => 'manage' %></li>
+  <li><%= link_to 'Delete Domain', { :action => 'destroy', :id => domain.id }, :confirm => 'Are you sure?', :post => true, :class => 'delete' %></li>
+<ul>
+<% else %>
+<ul class="services">
+  <li><%= domain.sites.length %> Sites Hosted.</li>
+  <li><%= domain.mailboxes.length %> Mailboxes.</li>
+  <li><%= domain.mailaliases.length %> Mail Aliases.</li>
+  <li><%= domain.databases.length %> databases.</li>
+</ul>
+<% end %>
+
+</div>
+<% end %>
+
+<div class="grid-item">
+<h4><%= link_to "Add a domain", :controller => 'domain', :action => 'add' %><span class="subtitle">Host another domain with us!</span></h4>
+</div>

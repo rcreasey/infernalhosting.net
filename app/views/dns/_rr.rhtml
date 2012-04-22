@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= form_remote_tag( :update => 'rr-form', :url => { :action => :rr } ) %>
+<fieldset>
+<legend>Resource Records</legend>
+  <%= render :partial => 'form_rr' %>
+<div id="form_submit">
+  <%= submit_tag 'Update RRs' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

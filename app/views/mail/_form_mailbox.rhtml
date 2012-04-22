@@ -1,0 +1,26 @@
+<%= error_messages_for 'mailbox' %>
+
+<!--[form:mailbox]-->
+<div id="origin">
+<label for="name">Name</label>
+<%= text_field :mailbox, :name %>
+<p class="form_caption">This is the name of the owner of the mailbox, ie: "John C. Doe".</p>
+</div>
+
+<div id="address">
+<label for="name">Address</label>
+<%= text_field :mailbox, :username, :length => 20, :style => 'width: 100px' %><span class="spacer" style="margin: 0 5px;">@</span><%= select :mailbox, :dns_resource_id, @domain.service_records %>
+<p class="form_caption">The mailbox address.  The domains listed are only the viable options for your domain.</p>
+</div>
+
+<div id="password">
+<label for="password">Password</label>
+<% if @mailbox.password.nil? %>
+<%= text_field :mailbox, :password %>
+<p class="form_caption">The password of the mailbox. It must be 4-40 characters long.</p>
+<% else %>
+<%= text_field_tag "mailbox[password]" %>
+<p class="form_caption">Change your password here.  Leave it blank to keep it the same.</p>
+<% end %>
+</div>
+<!--[eof:mailbox]-->

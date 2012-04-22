@@ -1,0 +1,82 @@
+= Whois examples
+
+== Whois request for IP 72.14.207.99, with IP like a string
+
+	require 'rubygems'
+	require 'whois'
+
+	w = Whois::Whois.new '72.14.207.99'
+	w.search_whois
+
+	# All return of request
+	w.all
+
+	# The ip return with object IPAddr
+	w.ip
+
+	# The server where the request has send
+	w.server
+
+	# The host of this IPv4
+	w.host
+
+== Whois request for IP 72.14.207.99, with IP like a IPAddr instance
+
+	require 'rubygems'
+	require 'whois'
+	require 'ipaddr'
+
+	ip = IPAddr.new '72.17.207.99'
+	w = Whois::Whois.new ip
+	w.search_whois
+
+	# All return of request
+	w.all
+
+	# The ip return with object IPAddr
+	w.ip
+
+	# The server where the request has send
+	w.server
+
+	# The host of this IPv4
+	w.host
+
+== Whois request for IP 72.14.207.99 with resolv host
+
+	require 'rubygems'
+	require 'whois'
+
+	w = Whois::Whois.new '72.14.221.147', true
+	w.search_whois
+
+	# All return of request
+	w.all
+
+	# The ip return with object IPAddr
+	w.ip
+
+	# The server where the request has send
+	w.server
+
+	# The host of this IPv4
+	w.host #=> fg-in-f147.google.com
+
+== Whois request for a Host
+
+	require 'rubygems'
+	require 'whois'
+	
+	w = Whois::Whois.new 'fg-in-f147.google.com'
+	
+	# All return of request
+	w.all
+
+	# The ip return with object IPAddr
+	w.ip
+
+	# The server where the request has send
+	w.server
+
+	# The host of this host
+	w.host #=> fg-in-f147.google.com

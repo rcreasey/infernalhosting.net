@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= form_remote_tag( :update => 'soa-form', :url => { :action => :soa } ) %>
+<fieldset>
+<legend>Start of Authority Record</legend>
+  <%= render :partial => 'form_soa' %>
+<div id="form_submit">
+  <%= submit_tag 'Update SOA' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

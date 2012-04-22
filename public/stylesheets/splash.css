@@ -1,0 +1,12 @@
+body {
+  background: #000 url('/img/interface/bg-body-splash.png') top left;
+}
+
+#splash {
+  margin: 5em auto;
+  text-align: center;
+}
+
+#splash img {
+  border: solid 1px #333;
+}

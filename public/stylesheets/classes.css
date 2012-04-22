@@ -1,0 +1,220 @@
+/* | DIV CLASSES
+   +------------------------------------------- */
+div#loader {
+display: none;
+}
+
+div#alert {
+  background: #fff7cc url("/img/interface/bg-warning.png") top left;
+  border: solid 1px #edda7f;
+  color: #000;
+  font-weight: bold;
+  opacity: 0.85;
+  padding: 5px;
+  z-index: 5000;
+}
+
+div#alert h5 {
+  background: url("/img/interface/icons/alert.gif") no-repeat left top;
+  color: #7b5024;
+  font-family: tahoma, verdana, geneva, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 20px;
+  height: 20px;
+  margin: 0;
+  padding: .5em 0 .5em 2.5em;
+}
+
+div.grid-item {
+  border-bottom: solid 1px #d3d3d3;
+  float: left;
+  margin: 0;
+  min-height: 50px;
+  padding: 2px;
+  width: 250px;
+}
+
+div.grid-item p {
+  margin: 0;
+}
+
+
+ul.options {
+  padding: 0;
+  margin: 5px 0;
+}
+
+ul.options li {
+  border: #DBDBDB 1px solid;
+  background: url("/img/interface/bg-button.png") repeat left top;
+  font-size: .8em;
+  float: left;
+  list-style-type: none;
+  line-height: 1em;
+  margin: 0 5px 0 0;
+  height: 20px;
+  padding: 0;
+  text-align: left;
+  width: 110px;
+}
+
+ul.options li a {
+  color: #444;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  min-height: 20px;
+  min-width: 70px;
+  line-height: 2em;
+  text-align: left;
+}
+
+ul.options li a.manage {
+  background: url("/img/interface/icons/next.png") 3px 3px no-repeat;
+  padding-left: 24px;
+}
+
+ul.options li a.manage-dns {
+  background: url("/img/interface/icons/dns.png") 3px 3px no-repeat;
+  padding-left: 24px;
+}
+
+ul.options li a.manage-web {
+  background: url("/img/interface/icons/web.png") 3px 3px no-repeat;
+  padding-left: 24px;
+}
+
+ul.options li a.delete {
+  background: url("/img/interface/icons/delete.png") 3px 3px no-repeat;
+  padding-left: 24px;
+}
+
+#fancymenu {
+  position: relative;
+  padding: 0;
+  margin: .5em 0 1.5em 0;
+  overflow: hidden;
+}
+ 
+#fancymenu ul {
+  padding: 0;
+  margin: 0;
+}
+ 
+#fancymenu ul li {
+  float: left;
+  list-style: none;
+  color: #333;
+  text-align: center;
+}
+ 
+#fancymenu ul li a {
+  color: #555;
+  border: solid 1px #bdbdbd;
+  background: #fafafa url("/img/interface/bg-button.png") repeat left top;
+  line-height: 2.3em;
+  -moz-border-radius: 3px;
+  padding: .3em;
+}
+
+#fancymenu ul li a:active {
+  color: #D34E27;
+}
+
+div#form-add-alias, 
+div#form-add-mailbox {
+ margin-bottom: 2em;
+}
+
+#sites-list,
+#alias-list,
+#mailbox-list {
+  float: left;
+  list-style: none;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  overflow: hidden;
+}
+
+ul#sites-list li a,
+ul#alias-list li a,
+ul#mailbox-list li a {
+  border: solid 1px #d3d3d3;
+  background-color: #fafafa;
+  display: block;
+  font-size: .8em;
+  color: #666;
+  letter-spacing: .1em;
+  margin: 0 0 5px 0;
+  padding: 0 5px;
+  -moz-border-radius: 4px;
+  text-align: center;
+}
+
+ul#sites-list li a:hover,
+ul#alias-list li a:hover,
+ul#mailbox-list li a:hover {
+  border: solid 1px #acacac;
+  background-color: #ededed;
+  color: #a83f1f;
+}
+
+div#site-detail,
+div#alias-detail,
+div#mailbox-detail {
+  background-color: #FAFAFA;
+  border: solid 1px #d3d3d3;
+  margin-left: 210px;
+  min-height: 200px;
+  padding: 2px 5px;
+  -moz-border-radius: 4px;
+}
+
+div.fieldWithErrors {
+  background: #FFBC6C;
+  color: #FFF099;
+  border-top: solid 1px #FF8C05;
+  border-bottom: solid 1px #FF8C05;
+  padding: .2em 0;
+  margin: 0 -.8em ;
+}
+
+div#errorExplanation {
+  background: #FFF099 url("/img/interface/icons/alert.gif") 2px 5px no-repeat;
+  border-top: solid 1px #DBB500;
+  border-bottom: solid 1px #DBB500;
+  font-weight: bold;
+  opacity: 0.85;
+  margin: -1.5em 0 1em 0;
+  padding: .5em 0 .5em 45px;
+}
+
+div#errorExplanation h2 {
+  color: #A83F1F;
+  text-transform: capitalize;
+  border: 0;
+  margin: 0;
+}
+
+div#errorExplanation p {
+  color: #222;
+  margin: 0;
+}
+
+div#errorExplanation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1em;
+}
+
+div#errorExplanation li {
+  color: #222;
+}
+
+.right {
+  text-align: right;
+}

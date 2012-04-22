@@ -1,0 +1,13 @@
+<!--[form:alias]-->
+<div id="address">
+<label for="name">Address</label>
+<%= text_field :alias, :username, :length => 20, :style => 'width: 100px' %><span class="spacer" style="margin: 0 5px;">@</span><%= select :alias, :dns_resource_id, DnsResource.find(:all, :include => ['dns_zone'], :order => 'dns_resources.id, dns_resources.name', :conditions => ["dns_resources.dns_zone_id = ? and (dns_resources.type = 'A' or dns_resources.type = 'CNAME')", @domain.id]).collect {|r| [ sprintf("%s%s%s",r.name, !r.name.empty? ? '.' : '', r.dns_zone.origin), r.id]} %>
+<p class="form_caption">The origin address, this is what you want to have as your alias.  The domains listed are only the viable options for your domain.</p>
+</div>
+
+<div id="destination">
+<label for="name">Destination</label>
+<%= text_field :alias, :destination %>
+<p class="form_caption">This is the destination address for this alias.</p>
+</div>
+<!--[eoform:alias]-->

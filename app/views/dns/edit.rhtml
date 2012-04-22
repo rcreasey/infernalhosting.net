@@ -1,0 +1,13 @@
+<p>The DNS Editor will allow you to make changes to the DNS records we have for your domain name.  There are two modes for editing your DNS, basic and advanced.  The basic editor will take care of all the super-technical details about dns management.  This is the default editor mode.  The advanced editor will allow you to manage all aspects of your DNS zone.  You can manage all values of your SOA record as well as each resource record attached to the zone.  Only use this option if you really know what you're doing.</p>
+
+<div id="tabfield">
+  <div id="soa-form" class="tab-content"><%= render :partial => 'soa' %></div>
+  <div id="rr-form" class="tab-content"><%= render :partial => 'rr' %></div>
+</div>
+
+<script type="text/javascript">
+var dnstabs = new Ext.TabPanel('tabfield');
+dnstabs.addTab('soa-form', "SOA Record");
+dnstabs.addTab('rr-form', "Resource Records");
+dnstabs.activate('rr-form');
+</script>

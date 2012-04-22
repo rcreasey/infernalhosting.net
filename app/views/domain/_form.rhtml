@@ -1,0 +1,30 @@
+<%= error_messages_for 'domain' %>
+
+<!--[form:domain]-->
+<div id="origin">
+<label for="origin">Domain Name</label>
+<%= text_field :domain, :origin %>
+<p class="form_caption">The name of the domain you wish to host (just the TLD, please.  No need for 'www.').</p>
+</div>
+
+<div id="defaults">
+<label for="defaults">Create Defaults</label>
+<%= check_box_tag :defaults %>
+<p class="form_caption">Check this if you want to create the zone with a populated list of standard <strong class="orange">infernal</strong>hosting values.</p>
+</div>
+
+<h4>Domain Options</h4>
+<div id="register">
+<label for="register">Register</label>
+<%= check_box_tag :register %>
+<p class="form_caption">Register this domain (.com, .org or .net only) with us and point it at our nameservers. <strong><%= @domain.prices[:register] %></strong></p>
+</div>
+
+<div id="transfer">
+<label for="transfer">Transfer</label>
+<%= check_box_tag :transfer %>
+<p class="form_caption">Transfer this domain (.com, .org or .net only) to us and point it at our nameservers. <strong><%= @domain.prices[:transfer] %></strong></p>
+</div>
+
+
+<!--[eoform:domain]-->

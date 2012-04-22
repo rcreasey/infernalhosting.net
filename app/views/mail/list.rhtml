@@ -1,0 +1,20 @@
+<h2>Manage Mail :: <%= @domain.name %></h2>
+<div id="fancymenu">
+<ul>
+  <li><%= link_to "Manage Domain", :controller => "/panel/#{@domain.name}" %></li>
+</ul>
+
+</div>
+<p>For the email attached to your domain, there are two kinds of accounts.  A <strong>Mailbox</strong> account will create a new email address, delivered locally to our mail systems.  An <strong>Alias</strong> account will create an email address that will forward all mail to that address to another email address, including remote accounts (addresses you don't have hosted with us) or mailboxes you have hosted here.</p>
+
+<div id="tabfield">
+  <div id="mailbox-overview"><%= render :partial => 'list_mailboxes' %></div>
+  <div id="alias-overview"><%= render :partial => 'list_aliases' %></div>
+</div>
+
+<script type="text/javascript">
+var tabs = new Ext.TabPanel('tabfield');
+tabs.addTab('mailbox-overview', "Mailboxes");
+tabs.addTab('alias-overview', "Aliases");
+tabs.activate('mailbox-overview');
+</script>

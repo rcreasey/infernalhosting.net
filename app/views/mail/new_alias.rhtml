@@ -1,0 +1,9 @@
+<%= form_remote_tag( :update => 'alias-overview', :url => { :action => :create_alias } ) %>
+<fieldset class="ajax">
+<legend>Add Alias</legend>
+  <%= render :partial => 'form_alias' %>
+<div id="form_submit">
+  <%= submit_tag 'Add Alias' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

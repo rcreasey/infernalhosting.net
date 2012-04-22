@@ -1,0 +1,18 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<h3>Web Sites</h3>
+
+<div id="sites-container">
+<ul id="sites-list">
+  <li><%= link_to_remote "Add Site", :url=>{ :controller => "/panel/#{@domain.name}/web", :action=>"new_site"}, :update=>"site-detail" %></li>
+<% for site in @domain.sites %>
+  <li><%= link_to_remote site.domain, :url=>{ :controller => "/panel/#{@domain.name}/site", :action=>"edit_site", :id=> site.id}, :update=>"site-detail" %></li>
+<% end %>
+</ul>
+
+<div id="site-detail">
+<%= render :partial => 'site_detail' %>
+</div>
+</div>

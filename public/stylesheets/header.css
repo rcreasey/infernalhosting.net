@@ -1,0 +1,60 @@
+/* | HEADER ELEMENTS 
+   +------------------------------------------- */
+h1 {
+  color: #000;
+  font-family: "lucida grande", "lucida sans unicode", lucida, verdana, geneva, sans-serif;
+  font-size: .1em;
+  font-weight: bold;
+  margin: 0 0 75px;
+  text-transform: uppercase;
+}
+
+h2 {
+  border-bottom: solid 1px #d3d3d3;
+  color: #444;
+  font-size: 1.5em;
+  font-family: "lucida sans", "lucida sans unicode", lucida, verdana, geneva, sans-serif;
+  margin: 0 5px 0 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  border-bottom: solid 1px #ccc;
+  color: #A83F1F;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.15em;
+  letter-spacing: 2px;
+  padding: 0 0 5px 10px; 
+  margin: 2px 0 10px 0;
+}
+
+h3 span.subtitle {
+  color: #444;
+  display: block;
+  font-size: .6em;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+h4 {
+  color: #444;
+  font-size: 1em;
+  font-weight: bold;
+  margin: .3em 0 0 0;
+}
+
+h4 span.subtitle {
+  color: #444;
+  display: block;
+  font-size: .8em;
+  font-weight: normal;
+}
+
+h6 {
+  color: #d34e27;
+  font-size: .8em;
+  font-weight: bold;
+  margin: .3em 0 0 0;
+}
+

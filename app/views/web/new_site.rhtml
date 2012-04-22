@@ -1,0 +1,9 @@
+<%= form_remote_tag( :update => 'sites-overview', :url => { :action => :create_site }) %>
+<fieldset class="ajax">
+<legend>Add Site</legend>
+  <%= render :partial => 'form_site' %>
+<div id="form_submit">
+  <%= submit_tag 'Add Site' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

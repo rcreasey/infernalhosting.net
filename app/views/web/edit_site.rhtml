@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= form_remote_tag( :update => 'sites-overview', :url => { :action => :update_site, :origin => @domain.name }) %>
+<fieldset class="ajax">
+<legend>Edit Site</legend>
+  <%= render :partial => 'form_site' %>
+<div id="origin">
+<label for="name">Delete</label>
+<%= check_box_tag 'delete'  %>
+<p class="form_caption">Delete this site (WARNING: This cannot be undone.</p>
+</div>
+<div id="id">
+<%= hidden_field_tag 'id', params[:id] %>
+</div>
+<div id="form_submit">
+  <%= submit_tag 'Edit Site' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

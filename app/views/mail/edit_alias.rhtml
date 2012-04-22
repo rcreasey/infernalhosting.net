@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= form_remote_tag( :update => 'alias-overview', :url => { :action => :update_alias, :origin => @domain.name }) %>
+<fieldset class="ajax">
+<legend>Edit Alias</legend>
+  <%= render :partial => 'form_alias' %>
+<div id="origin">
+<label for="name">Delete</label>
+<%= check_box_tag 'delete'  %>
+<p class="form_caption">Delete this mail alias (<strong>WARNING: This cannot be undone</strong>).</p>
+</div>
+<div id="id">
+<%= hidden_field_tag 'id', params[:id] %>
+</div>
+<div id="form_submit">
+  <%= submit_tag 'Edit Alias' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

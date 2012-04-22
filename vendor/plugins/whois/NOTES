@@ -1,0 +1,29 @@
+= Whois Release Notes
+
+== 0.3.0
+
+Now you can create a Whois class with an object IPAddr (require 'ipaddr')
+
+You can obtains the host name for your IP when you made a request Ipv4. This 
+resolv must be made if you put a true in second arguments for the initialize
+
+You can too made a request Whois with a host, now
+
+== 0.2.1
+
+Release for fix bugs
+
+== 0.2.0
+
+It's my first version. This version is base to code of Whois unix program in C of Marco d'Itri.
+
+In this programme a list of whois server is write and I create a parser for create a Yaml file
+with this list. The parser is parse_list.rb[link://util/parse_list.rb].
+
+The list of Whois Server, for each Ipv4 is in ipv4.yaml[link://lib/data/ipv4.yaml]. A Ruby Class 
+exist for all Whois Server check in this Yaml file. All Server are in server.rb[link://lib/server/server.rb]
+
+== 0.1.O
+
+It's the old version by Michael Neumann. Thank to him. 
+If you see his work, check out his class[link://old/whois.rb]

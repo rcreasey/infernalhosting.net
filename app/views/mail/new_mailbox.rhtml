@@ -1,0 +1,9 @@
+<%= form_remote_tag( :update => 'mailbox-overview', :url => { :action => :create_mailbox }, :complete => :mailbox_detail ) %>
+<fieldset class="ajax">
+<legend>Add Mailbox</legend>
+  <%= render :partial => 'form_mailbox' %>
+<div id="form_submit">
+  <%= submit_tag 'Add Mailbox' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

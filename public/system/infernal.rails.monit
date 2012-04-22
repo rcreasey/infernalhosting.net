@@ -1,0 +1,44 @@
+set daemon 60
+set mailserver localhost
+set mail-format { from: monit@infernalhosting.net }
+set alert ryan@evilcode.net
+
+check process infernalhosting_net_1666 with pidfile /www/infernalhosting.net/current/log/mongrel.1666.pid
+  group infernalhosting_net
+  start program = "/usr/bin/ruby /usr/bin/mongrel_rails start -d -e production -p 1666 -a 127.0.0.1 -P /www/infernalhosting.net/shared/log/mongrel.1666.pid -c /www/infernalhosting.net/current"
+  stop program  = "/usr/bin/ruby /usr/bin/mongrel_rails stop -P /www/infernalhosting.net/shared/log/mongrel.1666.pid"
+ 
+  if failed host 127.0.0.1 port 1666 protocol http
+    and request "/" with timeout 45 seconds
+  then restart
+
+  if totalmem > 250 Mb then restart
+  if cpu is greater than 90% for 2 cycles then restart
+  if 4 restarts within 5 cycles then timeout
+
+check process infernalhosting_net_1667 with pidfile /www/infernalhosting.net/current/log/mongrel.1667.pid
+  group infernalhosting_net
+  start program = "/usr/bin/ruby /usr/bin/mongrel_rails start -d -e production -p 1667 -a 127.0.0.1 -P /www/infernalhosting.net/shared/log/mongrel.1667.pid -c /www/infernalhosting.net/current"
+  stop program  = "/usr/bin/ruby /usr/bin/mongrel_rails stop -P /www/infernalhosting.net/shared/log/mongrel.1667.pid"
+
+  if failed host 127.0.0.1 port 1667 protocol http
+    and request "/" with timeout 45 seconds
+  then restart
+
+  if totalmem > 250 Mb then restart
+  if cpu is greater than 90% for 2 cycles then restart
+  if 4 restarts within 5 cycles then timeout
+
+check process infernalhosting_net_1668 with pidfile /www/infernalhosting.net/current/log/mongrel.1668.pid
+  group infernalhosting_net
+  start program = "/usr/bin/ruby /usr/bin/mongrel_rails start -d -e production -p 1668 -a 127.0.0.1 -P /www/infernalhosting.net/shared/log/mongrel.1668.pid -c /www/infernalhosting.net/current"
+  stop program  = "/usr/bin/ruby /usr/bin/mongrel_rails stop -P /www/infernalhosting.net/shared/log/mongrel.1668.pid"
+
+  if failed host 127.0.0.1 port 1668 protocol http
+    and request "/" with timeout 45 seconds
+  then restart
+
+  if totalmem > 250 Mb then restart
+  if cpu is greater than 90% for 2 cycles then restart
+  if 4 restarts within 5 cycles then timeout
+

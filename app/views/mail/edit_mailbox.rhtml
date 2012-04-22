@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= form_remote_tag( :update => 'mailbox-overview', :url => { :action => :update_mailbox, :origin => @domain.name }) %>
+<fieldset class="ajax">
+<legend>Edit Mailbox</legend>
+  <%= render :partial => 'form_mailbox' %>
+<div id="origin">
+<label for="name">Delete</label>
+<%= check_box_tag 'delete'  %>
+<p class="form_caption">Delete this mailbox (WARNING: This cannot be undone.</p>
+</div>
+<div id="id">
+<%= hidden_field_tag 'id', params[:id] %>
+</div>
+<div id="form_submit">
+  <%= submit_tag 'Edit Mailbox' %>
+</div>
+</fieldset>
+<%= end_form_tag %>

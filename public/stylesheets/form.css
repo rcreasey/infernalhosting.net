@@ -1,0 +1,162 @@
+/* | FORM ELEMENTS 
+   +------------------------------------------- */
+form {
+  width: 750px;
+}
+
+select, input, textarea {
+  font-size: 1em;
+}
+
+input[type=text], input[type=password], textarea {
+  width: 230px;
+}
+
+input[type=image] {
+  background-color: transparent;
+  border: 0;
+}
+
+table.form td textarea {
+  width: 100%;
+}
+
+input:focus {
+  -moz-outline: none;
+  opacity: 0.5;
+  background: #4CA1D8;
+}
+
+textarea, input {
+  background: url("/img/interface/bg-input.gif") #fff no-repeat left top;
+  border: #cfcfcf 1px solid;
+  color: #585858;
+  padding: 2px;
+}
+
+textarea:focus, input:focus, textarea.focus, input.focus {
+  background: url("/img/interface/bg-input_focus.gif") no-repeat left top;
+  border: #bababa 1px solid;
+  color: #3C3C3C;
+  padding: 2px;
+  opacity: 1 !important;
+}
+
+input[type=submit], input[type=submit]:focus {
+  font-weight: bold;
+  padding: 5px;
+}
+
+
+textarea {
+  margin: 0;
+  overflow: auto;
+  width: 96%;
+}
+
+label {
+  float: left;
+  font-weight: bold;
+  display: block;
+  height: 15px;
+  width: 115px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+div.invalid p.form_caption {
+  color: #3c3c3c;
+  margin: 0 0 0 120px;
+  font-size: .85em;
+}
+
+div.invalid p.form_caption strong {
+ display: block;
+}
+
+div.invalid label {
+  color: #3c3c3c;
+  font-weight: bold !important;
+}
+
+.form_caption {
+  color: #3c3c3c;
+  margin: 0 0 0 120px;
+  font-size: .85em;
+}
+
+fieldset {
+  border: solid 1px #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset.ajax {
+  border: solid 1px #ccc;
+  background-color: #fff;
+  clear: none;
+  margin: 0 0 5px 0;
+  padding: 0;
+  width: 543px;
+}
+
+fieldset#login {
+  margin: 0 auto;
+  width: 400px;
+}
+
+legend {
+  border-bottom: solid 1px #ccc;
+  color: #A83F1F;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.15em;
+  letter-spacing: 2px;
+  padding: 0 0 5px 5px; 
+  margin-left: 5px;
+  margin-bottom: 26px;
+}
+
+fieldset.ajax legend {
+  font-size: 1.25em;
+  margin-bottom: 22px;
+}
+
+fieldset h4 {
+  border-top: solid 1px #efefef;
+  border-bottom: solid 1px #efefef;
+  background-color: #F9F9F9;
+  color: #999;
+  font-size: .8em;
+  padding: 5px 10px;
+  margin: .5em 0 1em 0;
+}
+
+fieldset div {
+  padding: 0 10px;
+}
+
+fieldset div#form_submit {
+  border-top: solid 1px #efefef;
+  background: url("/img/interface/bg-form-submit.gif") #ececec repeat left top;
+  padding: 5px 10px;
+}
+
+input[type=text].rr-ttl,
+input[type=text].rr-aux {
+  width: 40px;
+}
+
+input[type=text].rr-data,
+input[type=text].rr-name {
+  width: 200px;
+}
+
+input[type=checkbox] {
+  margin: 0;
+}
+
+table#form-rr {
+  margin: -2.2em 0 0 0;
+}
+

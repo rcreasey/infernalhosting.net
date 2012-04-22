@@ -1,0 +1,24 @@
+<h2><%= @domain.name %></h2>
+<p>Below are the services you have enabled for your hosted domain.  Make a selection below to review the options for each service.</p>
+
+<div id="domain-tabs" class="xp"></div>
+
+<script type="text/javascript">
+  var dtabs = new Ext.TabPanel('domain-tabs');
+
+  var dns = dtabs.addTab('dtabs-dns', "DNS");
+  dns.setUrl('<%= @domain.name %>/dns?ajax=true');
+
+  var sites = dtabs.addTab('dtabs-site', "Sites");
+  sites.setUrl('<%= @domain.name %>/web?ajax=true');
+
+  var mail = dtabs.addTab('dtabs-mail', "Mail");
+  mail.setUrl('<%= @domain.name %>/mail?ajax=true');
+
+  var db = dtabs.addTab('dtabs-db', "Database");
+  db.setUrl('<%= @domain.name %>/db?ajax=true');
+  dtabs.disableTab('dtabs-db');
+  dtabs.activate('dtabs-dns');
+</script>
+
+

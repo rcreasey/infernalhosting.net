@@ -1,0 +1,29 @@
+<h2>Login</h2>
+<p>Please enter you login credentials below.</p>
+
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<%= start_form_tag :action => "login" %>
+<fieldset id="login">
+  <legend>Login Credentials</legend>
+
+  <div id="username">
+  <label for="username">Username</label>
+  <%= text_field :user, :username %>
+  <p class="form_caption">Your Infernal Account name</p>
+  </div>
+
+  <div id="password">
+  <label for="password">Password</label>
+  <%= password_field :user, :password, :value => "" %>
+  <p class="form_caption">Reset your password</p>
+  </div>
+
+  <div id="form_submit">
+  <%= submit_tag "Log In" %> 
+  </div>
+</fieldset>
+<% end_form_tag %>
+</form>

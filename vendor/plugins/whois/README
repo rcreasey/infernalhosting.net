@@ -1,0 +1,27 @@
+= Whois
+
+Whois is a class for obtains information on whois with an Ipv4, Ipv6 and host. 
+This class send a whois-query to whois suitable server. 
+After parse information must be return
+
+This library is start with work to Michael Neumann. Thank to him. 
+
+== Dependencies
+
+* ruby 1.8.2
+
+== Examples
+
+If you are just starting, check out the EXAMPLES[link://files/EXAMPLES.html] file.
+
+== Authors
+
+Copyright (c) 2007 by Cyril Mougel (cyril.mougel@gmail.com)
+
+If you want more information on me see my blog (http://shingara.free.fr/blog), 
+it's in french, because my english is not really good :)
+
+== License
+
+This library is distributed under the GPL.  Please see the LICENSE file.
+

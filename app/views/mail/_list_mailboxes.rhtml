@@ -1,0 +1,26 @@
+<% if flash[:notice] %>
+<%= render :partial => 'shared/notice' %>
+<% end %>
+
+<!--
+<div id="fancymenu">
+<ul>
+  <li><a href="javascript:expand('form-add-mailbox')" id="add_mailbox">Add Mailbox</a></li>
+</ul>
+</div>
+-->
+
+<h3>Mailbox Accounts</h3>
+
+<div id="mailbox-container">
+<ul id="mailbox-list">
+  <li><span class="realname"><%= link_to_remote "Add Mailbox", :url=>{ :controller => "/panel/#{@domain.name}/mail", :action=>"new_mailbox"}, :update=>"mailbox-detail" %></span></li>
+<% for mailbox in @domain.mailboxes %>
+  <li><%= link_to_remote mailbox.address, :url=>{ :controller => "/panel/#{@domain.name}/mail", :action=>"edit_mailbox", :id=> mailbox.id}, :update=>"mailbox-detail" %></li>
+<% end %>
+</ul>
+
+<div id="mailbox-detail">
+<%= render :partial => 'mailbox_detail' %>
+</div>
+</div>

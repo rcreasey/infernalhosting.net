@@ -1,0 +1,25 @@
+= Whois CHANGELOG
+
+== 0.3.0
+ 
+ * Add possibility construct the Whois Object with a IPAddr object
+ 
+ * Add the host information when you search a whois with an Ipv4. 
+   This information is optionnal. By default it's false.
+   For that the host is resolv, the second arg to Whois.new must be true
+ 
+ * Add request whois whith a host String.
+
+== 0.2.1
+
+ * Fix bug in gem where the data/ipv4.yaml is not load
+ * Fix bug in gem where the link to require server was bad
+ * Fix bad Name to server class
+
+== 0.2.0
+
+ * Recode all class for check all IPv4 and search good Server
+
+== 0.1.0
+
+It's the Old version by Michael Neumann
